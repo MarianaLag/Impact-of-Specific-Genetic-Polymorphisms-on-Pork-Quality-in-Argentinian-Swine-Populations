@@ -1,0 +1,11 @@
+carner<-read.csv2("pcahalpubli.csv") library(FactoMineR)
+summary(carner)
+head(carner)
+names(carner) 
+pcacarner<-PCA(carner[,1:12], scale.unit = TRUE, ind.sup = NULL, quanti.sup = NULL,
+               quali.sup = NULL,row.w = NULL,col.w = NULL,graph = TRUE,axes = c(1,2))
+library(ggplot2)
+library(shiny)
+library(FactoInvestigate)
+library(Factoshiny)
+PCAshiny(carner)
